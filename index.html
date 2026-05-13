@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WifiAlli OpenWrt Feed</title>
+  <style>
+    body { font-family: sans-serif; max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+    pre  { background: #f4f4f4; padding: 1rem; border-radius: 4px; overflow-x: auto; }
+    h2   { margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <h1>WifiAlli OpenWrt Package Feed</h1>
+  <p>Packages built with OpenWrt 25.12.0 for ramips/mt7621.</p>
+
+  <h2>Installation</h2>
+  <pre>
+# Add the feed
+echo "src/gz wifialli https://seimonw.github.io/wifialli-packages/mipsel_24kc" \
+  >> /etc/opkg/customfeeds.conf
+
+opkg update
+opkg install wifialli
+
+# Configure
+cp /etc/wifialli/config.yaml.example /etc/wifialli/config.yaml
+vi /etc/wifialli/config.yaml
+
+# Start
+/etc/init.d/wifialli enable
+/etc/init.d/wifialli start
+logread -f | grep wifialli</pre>
+
+  <h2>Packages</h2>
+  <ul>
+    <li><a href="mipsel_24kc/">mipsel_24kc/ (ramips/mt7621)</a></li>
+  </ul>
+</body>
+</html>
