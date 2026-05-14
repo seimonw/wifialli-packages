@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "architecture": "mipsel_24kc",
+  "packages": {
+    "paho-mqtt-c": "1.3.16-r1",
+    "paho-mqtt-cpp": "1.6.0-r1",
+    "wifialli": "1.0.0-r1"
+  }
+}
